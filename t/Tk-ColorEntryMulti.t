@@ -16,22 +16,21 @@ if (defined $app) {
 		-width => 200,
 		-height => 100,
 	)->pack(-fill => 'both');
-	my $l = $frame->Label(
-		-width => 20,
-		-height => 2,
-	)->pack(
-		-fill => 'both',
-	);
-	$entry = $frame->ColorEntry(
-		-balloon => $balloon,
-		-command => sub { $l->configure(-background => shift) },
-		-depthselect => 1,
-		-indicatorwidth => 4,
-		-historyfile => 't/colorentry_history',
-	)->pack(
-		-fill => 'x',
-	);
-	$frame->Entry->pack;
+	my $row = 0;
+	while ($row ne 2) {
+		my $column = 0;
+		while ($column ne 2) {
+			$entry = $frame->ColorEntry(
+				-balloon => $balloon,
+				-historyfile => 't/colorentry_history',
+			)->grid(
+				-row => $row,
+				-column => $column,
+			);
+			$column ++;
+		}
+		$row ++
+	}
 }
 
 push @tests, (

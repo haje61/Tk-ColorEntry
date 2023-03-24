@@ -6,5 +6,6 @@ Makefile.PL
 MANIFEST
 README.md
 t/Tk-ColorEntry.t
+t/Tk-ColorEntryMulti.t
 t/Tk-ColorPicker.t
 t/Tk-PopColor.t
