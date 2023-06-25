@@ -3,7 +3,7 @@ package Tk::ColorEntry;
 use strict;
 use warnings;
 use vars qw($VERSION);
-$VERSION = '0.04';
+$VERSION = '0.05';
 use Tk;
 
 use base qw(Tk::Derived Tk::Frame);
@@ -129,8 +129,10 @@ sub Populate {
 			-relief => $indicator,
 			-indrelief => $pop,
 		}, undef, undef, 'sunken'],
+		-justify => [$entry],
 		-popborderwidth => [{-borderwidth => $pop}, undef, undef, 1],
 		-poprelief => [{-relief => $pop}, undef, undef, 'raised'],
+		-state => [$entry],
 		-variable => [{-textvariable => $entry}, undef, undef, \$var],
 		-width => [$entry],
 		DEFAULT => [ $pop ],
